@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Shahilulla S — Data Engineer and Software Engineer focused on data engineering, backend systems, databases, analytics, and research.">
+    <meta property="og:title" content="Shahilulla S | Data Engineer | Software Engineer">
+    <meta property="og:description" content="Data engineering, software engineering, backend systems, databases, analytics, and research.">
+    <meta property="og:type" content="website">
+    <title>Shahilulla S | Data Engineer | Software Engineer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0e17'/><text x='50' y='72' font-size='60' font-family='Inter,sans-serif' font-weight='800' fill='%23ef4444' text-anchor='middle'>S</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">SHAHILULLA<span> S</span></div>
+            <div class="preloader-bar"><div class="preloader-progress"></div></div>
+            <div class="preloader-text">INITIALIZING DATA SYSTEMS</div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Ring -->
+    <div class="scroll-ring" id="scrollRing">
+        <svg viewBox="0 0 100 100">
+            <circle class="ring-bg" cx="50" cy="50" r="45"/>
+            <circle class="ring-progress" cx="50" cy="50" r="45"/>
+        </svg>
+        <span class="ring-percent" id="ringPercent">0%</span>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Background Elements -->
+    <div class="bg-aurora"></div>
+    <div class="bg-grid"></div>
+    <div class="noise"></div>
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <header class="nav" id="top">
+        <a class="brand magnetic" href="#home">SHAHILULLA<span> S</span></a>
+        <nav id="navLinks">
+            <a href="#about" class="nav-link magnetic" data-section="about">About</a>
+            <a href="#skills" class="nav-link magnetic" data-section="skills">Skills</a>
+            <a href="#projects" class="nav-link magnetic" data-section="projects">Projects</a>
+            <a href="#research" class="nav-link magnetic" data-section="research">Research</a>
+            <a href="#education" class="nav-link magnetic" data-section="education">Education</a>
+            <a href="#contact" class="nav-link magnetic" data-section="contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+            <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+                <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </button>
+            <a class="resume-btn magnetic" href="resume.pdf" target="_blank">Resume <span class="arrow">↗</span></a>
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero section" id="home">
+            <div class="hero-copy">
+                <div class="eyebrow animate-in"><span></span> DATA ENGINEERING · SOFTWARE · RESEARCH</div>
+                <h1 class="animate-in delay-1">Building <span class="gradient-text">reliable systems</span> for a <span class="gradient-text">data-driven world</span>.</h1>
+                <div class="typing-container animate-in delay-2">
+                    <span class="typing-label">I AM A</span>
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="typing-cursor">|</span>
+                </div>
+                <p class="lead animate-in delay-3">I transform raw data into actionable intelligence. Data pipelines, backend architectures, and analytical workflows – built with precision and purpose.</p>
+                <div class="hero-actions animate-in delay-4">
+                    <a class="btn primary magnetic" href="#projects">Explore My Work <span class="btn-arrow">↘</span></a>
+                    <a class="btn secondary magnetic" href="resume.pdf" target="_blank">Download Resume</a>
+                </div>
+                <div class="social-row animate-in delay-5">
+                    <a href="https://github.com/shahilulla" target="_blank" rel="noreferrer" class="social-link magnetic">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub ↗
+                    </a>
+                    <a href="https://linkedin.com/in/shahilulla" target="_blank" rel="noreferrer" class="social-link magnetic">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn ↗
+                    </a>
+                    <a href="mailto:shahilulla.in@gmail.com" class="social-link magnetic">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Email ↗
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="profile-frame animate-in delay-2 tilt-element">
+                    <div class="profile-top"><span>SHAHILULLA S</span><span>DATA ENGINEER</span></div>
+                    <img src="profile.jpg" alt="Professional portrait of Shahilulla S">
+                    <div class="profile-bottom"><span>SOFTWARE · DATA · RESEARCH</span><span>01</span></div>
+                    <div class="profile-glow"></div>
+                </div>
+                <div class="pipeline-card animate-in delay-3 tilt-element">
+                    <div class="card-top"><span>DATA WORKFLOW</span><span class="live-dot"><span class="pulse-dot"></span> LIVE</span></div>
+                    <div class="pipeline">
+                        <div class="node" style="animation-delay:0s"><b>01</b><strong>DATA SOURCES</strong><small>structured · raw · external</small></div>
+                        <i></i>
+                        <div class="node" style="animation-delay:.5s"><b>02</b><strong>INGESTION</strong><small>collect · validate · load</small></div>
+                        <i></i>
+                        <div class="node" style="animation-delay:1s"><b>03</b><strong>TRANSFORMATION</strong><small>ETL · cleaning · modeling</small></div>
+                        <i></i>
+                        <div class="node" style="animation-delay:1.5s"><b>04</b><strong>STORAGE</strong><small>PostgreSQL · cloud</small></div>
+                        <i></i>
+                        <div class="node accent" style="animation-delay:2s"><b>05</b><strong>ANALYTICS / API</strong><small>insights · applications</small></div>
+                    </div>
+                    <div class="card-footer"><span>PYTHON</span><span>SQL</span><span>POSTGRESQL</span><span>PYSPARK</span></div>
+                    <div class="card-glow"></div>
+                </div>
+            </div>
+            <div class="scroll-indicator animate-in delay-5">
+                <span>SCROLL TO EXPLORE</span>
+                <div class="mouse"><div class="wheel"></div></div>
+            </div>
+        </section>
+
+        <!-- STATS BAR -->
+        <div class="stats-bar">
+            <div class="stat-item" data-count="5">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-count="20">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-count="1">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Research Paper</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-count="5">
+                <span class="stat-number">0</span>
+                <span class="stat-label">Years of Study</span>
+            </div>
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <section class="section about" id="about">
+            <div class="section-head reveal">
+                <span class="section-num">01</span>
+                <h2>About <span class="gradient-text">Me</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="two-col">
+                <div class="reveal">
+                    <p class="big-copy">Data Engineer. <span class="highlight">Software Builder.</span> Researcher.</p>
+                    <p>I'm an Integrated M.Tech Computer Science & Engineering student focused on data engineering, backend development, databases, ETL workflows, analytics, and scalable data systems.</p>
+                    <p>My projects range from database applications and healthcare pipelines to an evolving data engineering platform and research into explainable root cause analysis for cloud-native systems.</p>
+                    <div class="about-quote">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                        <span>I believe in engineering that matters – turning complexity into clarity through data.</span>
+                    </div>
+                </div>
+                <div class="focus-card reveal tilt-element">
+                    <div class="mini-label">WHAT I FOCUS ON</div>
+                    <div class="focus-grid">
+                        <span class="focus-item">Data Engineering</span>
+                        <span class="focus-item">Backend Development</span>
+                        <span class="focus-item">Databases</span>
+                        <span class="focus-item">ETL & Pipelines</span>
+                        <span class="focus-item">Analytics</span>
+                        <span class="focus-item">Distributed Systems</span>
+                        <span class="focus-item">Research</span>
+                        <span class="focus-item">SQL Problem Solving</span>
+                    </div>
+                    <div class="flow">LEARN <b>→</b> BUILD <b>→</b> ANALYZE <b>→</b> IMPROVE</div>
+                    <div class="focus-glow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="section skills-section" id="skills">
+            <div class="section-head reveal">
+                <span class="section-num">02</span>
+                <h2>Technical <span class="gradient-text">Skills</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card reveal tilt-element">
+                    <div class="skill-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <div class="mini-label">PROGRAMMING</div>
+                    <div class="tags">
+                        <span>Java</span><span>Python</span><span>SQL</span><span>JavaScript</span><span>React</span><span>HTML</span><span>CSS</span>
+                    </div>
+                    <div class="skill-level"><div class="skill-bar" style="--level: 90%"></div></div>
+                </div>
+                <div class="skill-card reveal tilt-element">
+                    <div class="skill-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="mini-label">DATA ENGINEERING</div>
+                    <div class="tags">
+                        <span>ETL</span><span>Data Modeling</span><span>Data Cleaning</span><span>Transformation</span><span>Validation</span><span>Data Pipelines</span>
+                    </div>
+                    <div class="skill-level"><div class="skill-bar" style="--level: 85%"></div></div>
+                </div>
+                <div class="skill-card reveal tilt-element">
+                    <div class="skill-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    </div>
+                    <div class="mini-label">BIG DATA</div>
+                    <div class="tags">
+                        <span>Apache Spark</span><span>PySpark</span>
+                    </div>
+                    <div class="skill-level"><div class="skill-bar" style="--level: 75%"></div></div>
+                </div>
+                <div class="skill-card reveal tilt-element">
+                    <div class="skill-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    </div>
+                    <div class="mini-label">DATABASES</div>
+                    <div class="tags">
+                        <span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>PL/pgSQL</span>
+                    </div>
+                    <div class="skill-level"><div class="skill-bar" style="--level: 88%"></div></div>
+                </div>
+                <div class="skill-card reveal tilt-element">
+                    <div class="skill-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 7h5M17 17h5"/></svg>
+                    </div>
+                    <div class="mini-label">BACKEND / WEB</div>
+                    <div class="tags">
+                        <span>FastAPI</span><span>Flask</span><span>Node.js</span><span>Express.js</span><span>REST APIs</span>
+                    </div>
+                    <div class="skill-level"><div class="skill-bar" style="--level: 80%"></div></div>
+                </div>
+                <div class="skill-card reveal tilt-element">
+                    <div class="skill-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+                    </div>
+                    <div class="mini-label">CLOUD / PLATFORMS</div>
+                    <div class="tags">
+                        <span>Databricks</span><span>GCP</span>
+                    </div>
+                    <div class="skill-level"><div class="skill-bar" style="--level: 70%"></div></div>
+                </div>
+                <div class="skill-card reveal tilt-element">
+                    <div class="skill-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+                    </div>
+                    <div class="mini-label">ANALYTICS / TOOLS</div>
+                    <div class="tags">
+                        <span>Power BI</span><span>Excel</span><span>Git</span><span>GitHub</span>
+                    </div>
+                    <div class="skill-level"><div class="skill-bar" style="--level: 82%"></div></div>
+                </div>
+                <div class="skill-card reveal tilt-element">
+                    <div class="skill-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                    </div>
+                    <div class="mini-label">CORE COMPUTER SCIENCE</div>
+                    <div class="tags">
+                        <span>DSA</span><span>OOP</span><span>DBMS</span><span>Operating Systems</span>
+                    </div>
+                    <div class="skill-level"><div class="skill-bar" style="--level: 86%"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section class="section projects" id="projects">
+            <div class="section-head reveal">
+                <span class="section-num">03</span>
+                <h2>Selected <span class="gradient-text">Projects</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <p class="section-intro reveal">Building systems that work with real data and real engineering constraints.</p>
+            <div class="project-list">
+                <article class="project featured reveal tilt-element">
+                    <div class="project-num">01</div>
+                    <div class="project-main">
+                        <div class="project-meta">DATA ENGINEERING & ANALYTICS · IN DEVELOPMENT</div>
+                        <h3>NexusFlow</h3>
+                        <p>A data engineering and analytics platform focused on structured data pipelines, PostgreSQL, SQL, data modeling, ETL workflows, and analytical reporting for library and education data.</p>
+                        <div class="tags"><span>PostgreSQL</span><span>SQL</span><span>Data Modeling</span><span>ETL</span><span>Analytics</span></div>
+                        <button class="text-btn magnetic" data-project="nexus">View Case Study <span class="btn-arrow">→</span></button>
+                    </div>
+                    <div class="project-visual">
+                        <div class="arch">
+                            <span>DATA</span><b>↓</b><span>ETL</span><b>↓</b><span>POSTGRESQL</span><b>↓</b><span>ANALYTICS</span>
+                        </div>
+                    </div>
+                    <div class="project-glow"></div>
+                </article>
+
+                <article class="project reveal tilt-element">
+                    <div class="project-num">02</div>
+                    <div class="project-main">
+                        <div class="project-meta">DATA ENGINEERING · IN PROGRESS</div>
+                        <h3>Healthcare Data Pipeline</h3>
+                        <p>A healthcare-oriented pipeline using Python, SQL, PostgreSQL, PySpark, and cloud-oriented architecture for ETL, transformation, validation, and analytics workflows.</p>
+                        <div class="tags"><span>Python</span><span>PySpark</span><span>PostgreSQL</span><span>Databricks / GCP</span></div>
+                        <button class="text-btn magnetic" data-project="health">View Case Study <span class="btn-arrow">→</span></button>
+                    </div>
+                    <div class="project-side-code">SOURCE<br>↓<br>PYSPARK<br>↓<br>VALIDATE<br>↓<br>STORE</div>
+                    <div class="project-glow"></div>
+                </article>
+
+                <article class="project reveal tilt-element">
+                    <div class="project-num">03</div>
+                    <div class="project-main">
+                        <div class="project-meta">DATABASE & ANALYTICS</div>
+                        <h3>Library Data Management System</h3>
+                        <p>A normalized PostgreSQL database system using relational constraints, SQL views, PL/pgSQL functions, procedures, and triggers for library operations and analytics.</p>
+                        <div class="tags"><span>PostgreSQL</span><span>PL/pgSQL</span><span>SQL</span><span>Power BI</span></div>
+                        <button class="text-btn magnetic" data-project="library">View Case Study <span class="btn-arrow">→</span></button>
+                    </div>
+                    <div class="project-side-code">SCHEMA<br>→ VIEWS<br>→ FUNCTIONS<br>→ TRIGGERS<br>→ REPORTS</div>
+                    <div class="project-glow"></div>
+                </article>
+
+                <article class="project research-project reveal tilt-element">
+                    <div class="project-num">04</div>
+                    <div class="project-main">
+                        <div class="project-meta">RESEARCH · CLOUD-NATIVE SYSTEMS</div>
+                        <h3>Adaptive AI-Enhanced Root Cause Analysis Framework</h3>
+                        <p>A research framework for explainable root cause analysis in cloud-native microservice systems when observability data is incomplete or partially missing.</p>
+                        <div class="tags"><span>Python</span><span>Streamlit</span><span>Isolation Forest</span><span>Random Forest</span><span>XGBoost</span><span>SHAP</span></div>
+                        <button class="text-btn magnetic" data-project="research">Read Research <span class="btn-arrow">→</span></button>
+                    </div>
+                    <div class="project-side-code">TELEMETRY<br>↓<br>PARTIAL OBSERVABILITY<br>↓<br>RCA<br>↓<br>EXPLANATION</div>
+                    <div class="project-glow"></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- RESEARCH SECTION -->
+        <section class="section research" id="research">
+            <div class="section-head reveal">
+                <span class="section-num">04</span>
+                <h2>Research & <span class="gradient-text">Thesis</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="research-card reveal tilt-element">
+                <div class="research-copy">
+                    <div class="project-meta">APPLIED RESEARCH · EXPLAINABLE MACHINE LEARNING</div>
+                    <h3>An Adaptive AI-Enhanced Framework for Explainable Root Cause Analysis under Partial Observability in Cloud-Native Microservice Systems</h3>
+                    <p>Cloud-native systems generate logs, metrics, traces, requests, and failure signals. When some telemetry is missing or inconsistent, identifying the root cause becomes difficult. This research explores a framework that models partial observability, recovers missing data, detects anomalies, classifies root causes, and explains predictions.</p>
+                    <div class="research-metrics">
+                        <div class="metric"><strong>94.2%</strong><span>Ensemble Accuracy</span></div>
+                        <div class="metric"><strong>5</strong><span>Root Cause Classes</span></div>
+                        <div class="metric"><strong>3</strong><span>ML Models Used</span></div>
+                    </div>
+                    <button class="text-btn magnetic" data-project="research">Explore Research <span class="btn-arrow">→</span></button>
+                </div>
+                <div class="research-flow">
+                    <div>TELEMETRY</div><i>↓</i>
+                    <div>PARTIAL OBSERVABILITY</div><i>↓</i>
+                    <div>DATA RECOVERY</div><i>↓</i>
+                    <div>FEATURE ENGINEERING</div><i>↓</i>
+                    <div class="highlight-node">RCA + SHAP</div>
+                </div>
+                <div class="research-glow"></div>
+            </div>
+            <div class="research-note reveal">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <span><strong>Research exposure, not professional AI specialization.</strong> This project demonstrates applied work with machine learning and explainability within a systems/data problem.</span>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section class="section education" id="education">
+            <div class="section-head reveal">
+                <span class="section-num">05</span>
+                <h2>My <span class="gradient-text">Education</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="edu-card reveal tilt-element">
+                <div>
+                    <div class="project-meta">2022 — 2027</div>
+                    <h3>Integrated M.Tech in Computer Science & Engineering</h3>
+                    <p>Erode Sengunthar Engineering College</p>
+                    <div class="edu-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        Full-time · 5-Year Integrated Program
+                    </div>
+                </div>
+                <div class="cgpa">
+                    <span>CGPA</span>
+                    <strong>7.8</strong>
+                    <small>/ 10.0</small>
+                    <div class="cgpa-bar"><div class="cgpa-fill" style="--cgpa: 78%"></div></div>
+                </div>
+            </div>
+            <div class="interests reveal">
+                <div class="mini-label">AREAS I'M EXPLORING</div>
+                <div class="interest-tags">
+                    <span>Scalable Data Engineering</span>
+                    <span>Distributed Systems</span>
+                    <span>Data Pipelines</span>
+                    <span>Database Systems</span>
+                    <span>DSA</span>
+                    <span>SQL</span>
+                    <span>Backend Engineering</span>
+                    <span>Applied AI for Data / Systems</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="section contact" id="contact">
+            <div class="contact-card reveal tilt-element">
+                <div>
+                    <div class="eyebrow"><span></span> OPEN TO OPPORTUNITIES</div>
+                    <h2>Let's <span class="gradient-text">connect.</span></h2>
+                    <p>I'm open to internship opportunities, software and data engineering roles, research opportunities, and interesting technical collaborations.</p>
+                    <div class="contact-badge">
+                        <span class="status-dot"></span>
+                        Available for Internships & Roles
+                    </div>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:shahilulla.in@gmail.com" class="contact-link-item magnetic">
+                        <span class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </span>
+                        <span class="contact-label">Email</span>
+                        <strong>shahilulla.in@gmail.com ↗</strong>
+                    </a>
+                    <a href="https://github.com/shahilulla" target="_blank" rel="noreferrer" class="contact-link-item magnetic">
+                        <span class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </span>
+                        <span class="contact-label">GitHub</span>
+                        <strong>github.com/shahilulla ↗</strong>
+                    </a>
+                    <a href="https://linkedin.com/in/shahilulla" target="_blank" rel="noreferrer" class="contact-link-item magnetic">
+                        <span class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </span>
+                        <span class="contact-label">LinkedIn</span>
+                        <strong>linkedin.com/in/shahilulla ↗</strong>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>SHAHILULLA S</span>
+        <span>DATA ENGINEERING · SOFTWARE · RESEARCH</span>
+        <span>© 2026 · CRAFTED WITH <span class="heart">♥</span></span>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal" id="modal" aria-hidden="true">
+        <div class="modal-backdrop" id="modalClose"></div>
+        <div class="modal-panel">
+            <button class="modal-x" id="modalX" aria-label="Close">×</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
